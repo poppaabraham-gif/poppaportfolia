@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep portfolio motion and section tracking in the browser-only effect hook; server-rendered content stays visible and reduced-motion users get no entrance animations.
+- Keep portfolio layout and visual roles in the global semantic design system so screen-size refinements remain consistent.
