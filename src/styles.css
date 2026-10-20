@@ -63,14 +63,14 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: oklch(0.982 0 0);
+  --foreground: oklch(0.2 0.003 197);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0 0 0);
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -142,3 +142,29 @@
     color: var(--color-foreground);
   }
 }
+
+@theme inline {
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Space Grotesk", sans-serif;
+  --color-surface: var(--background);
+  --color-surface-lowest: var(--card);
+  --color-surface-low: var(--surface-low);
+  --color-surface-mid: var(--surface-mid);
+  --color-surface-high: var(--surface-high);
+  --color-ink-dim: var(--ink-dim);
+  --color-inverse-muted: var(--inverse-muted);
+  --color-inverse-chip: var(--inverse-chip);
+}
+:root {
+  --surface-low: oklch(0.966 0 0);
+  --surface-mid: oklch(0.948 0 0);
+  --surface-high: oklch(0.93 0 0);
+  --ink-dim: oklch(0.42 0.008 0);
+  --inverse-muted: oklch(0.62 0 0);
+  --inverse-chip: oklch(0.22 0 0);
+}
+@utility meta { font-size: 11px; line-height: 14px; letter-spacing: 0.08em; font-weight: 500; text-transform: uppercase; }
+@utility caps { font-size: 12px; line-height: 16px; letter-spacing: 0.12em; font-weight: 600; text-transform: uppercase; }
+@keyframes rise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+@utility rise { animation: rise 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+@layer base { body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; } html { scroll-behavior: smooth; } }
