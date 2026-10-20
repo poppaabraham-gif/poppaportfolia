@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import oldLogoAsset from "@/assets/oldc.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -127,7 +128,7 @@ function Index() {
                       <div className="flex items-center justify-around bg-surface-lowest p-4">
                         <div className="flex flex-col items-center gap-1">
                           <span className="meta text-ink-dim">Old</span>
-                          <div className="flex h-20 w-20 items-center justify-center bg-surface-mid meta text-ink-dim">Logo</div>
+                          <img src={oldLogoAsset.url} alt="Coral Bricks old logo" className="h-20 w-20 object-contain" />
                         </div>
                         <span className="text-xl font-bold text-primary">→</span>
                         <div className="flex flex-col items-center gap-1">
