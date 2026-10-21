@@ -86,8 +86,8 @@ function Index() {
 
       <main className="pt-20">
         <section id="top" className="flex min-h-[calc(100svh-5rem)] flex-col justify-between bg-surface-lowest px-5 py-16 md:px-16">
-          <div className="grid w-full max-w-7xl items-center gap-10 lg:grid-cols-12">
-            <div className="flex justify-center lg:col-span-5">
+          <div className="grid w-full max-w-7xl items-center gap-10 xl:grid-cols-12">
+            <div className="flex justify-center xl:col-span-5">
               <img
                 src={hero}
                 alt="Poppa Abraham illustration"
@@ -95,7 +95,7 @@ function Index() {
                 className="aspect-square w-full max-w-[300px] object-contain md:max-w-[420px]"
               />
             </div>
-            <div className="min-w-0 lg:col-span-7">
+            <div className="min-w-0 xl:col-span-7">
               <span className="caps rise inline-block tracking-[0.2em] text-ink-dim">Creative Growth &amp; GTM</span>
               <h1 className="mt-4 flex flex-col font-display text-[clamp(2.25rem,9vw,5.25rem)] font-extrabold uppercase leading-[1.05] tracking-tighter text-primary">
                 <span className="rise" style={{ animationDelay: "0.25s" }}>Poppa</span>
