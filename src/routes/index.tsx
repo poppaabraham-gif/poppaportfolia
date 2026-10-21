@@ -258,9 +258,14 @@ function Index() {
                 <a href="mailto:poppaabraham@gmail.com" className="break-words text-[clamp(1.05rem,4vw,1.375rem)] font-semibold underline underline-offset-8 transition-opacity hover:opacity-80">poppaabraham@gmail.com</a>
               </div>
               <div className="flex flex-wrap gap-3 sm:gap-4">
-                {[["X (Twitter)", "https://twitter.com/Poppa_Abraham"], ["LinkedIn", "https://www.linkedin.com/in/akingbade-abraham-705b75234"], ["Telegram", "https://t.me/Poppa_Abraham"]].map(([l, h]) => (
-                  <a key={l} href={h} target="_blank" rel="noopener noreferrer" className="caps flex-1 bg-inverse-chip px-4 py-3 text-center transition-colors hover:bg-primary-foreground hover:text-primary sm:flex-none">
-                    {l} <span aria-hidden="true">↗</span>
+                {[
+                  { short: "X", full: "X (Twitter)", href: "https://twitter.com/Poppa_Abraham" },
+                  { short: "LinkedIn", full: "LinkedIn", href: "https://www.linkedin.com/in/akingbade-abraham-705b75234" },
+                  { short: "Telegram", full: "Telegram", href: "https://t.me/Poppa_Abraham" },
+                ].map((social) => (
+                  <a key={social.full} href={social.href} target="_blank" rel="noopener noreferrer" className="caps flex-1 bg-inverse-chip px-4 py-3 text-center whitespace-nowrap transition-colors hover:bg-primary-foreground hover:text-primary sm:flex-none">
+                    <span className="sm:hidden">{social.short}</span>
+                    <span className="hidden sm:inline">{social.full}</span> <span aria-hidden="true">↗</span>
                   </a>
                 ))}
               </div>
