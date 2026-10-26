@@ -119,9 +119,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="pt-8">
-            <YearBar year="2026" />
-            <article className="reveal mb-16 bg-surface-lowest p-6 md:p-16">
+          <article className="reveal mb-16 bg-surface-lowest p-6 md:p-16">
               <div className="grid gap-8 lg:grid-cols-12">
                 <div className="flex min-w-0 flex-col justify-between lg:col-span-6">
                   <div>
@@ -176,7 +174,7 @@ function Index() {
                 </div>
               </div>
             </article>
-          </div>
+
 
           {rows.map((g) => (
             <div key={g.year} className={g.year === "2025" ? "pt-3" : undefined}>
