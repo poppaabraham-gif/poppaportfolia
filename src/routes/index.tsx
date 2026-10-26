@@ -34,8 +34,8 @@ const achievements = [
 const rows = [
   { year: "2026", items: [{ n: "02", y: "2026", name: "Level Break Media", status: "Previous Engagement", label: "Attention Engineering", desc: "B-ROLL · VOICEOVER · KINETIC TYPOGRAPHY", tag: "Audiovisual • Motion", logo: IMG + "AB6AXuALeeoiZ3621scIYz5c51DiaFZ7WMyKP1J45cke5z76SWP1Tqm9Yq0wGtU9Xm7NzxJZfQPTtWSSbvIzIeEdiCtJqqcr2NDQ5bAunH1nnkKiHhVarVaIve0aL2feqXpDuYItRAx9jr8QMW-MduoA5iac8ErYSl8lVtRyqIZCWV623AFl3cZmHtH5Rn1EAl-ywzOW1l6NEHualGEy5Arj5RWowcYrlaJgksT2WoRvZI-sOMIt8AQWf2OlufD9lC9UwYKsFw" }] },
   { year: "2025", items: [
-    { n: "03", y: "2025", name: "ReitCircles", status: "Ended December 2025", label: "Visual Communication", desc: "INFOGRAPHICS · ILLUSTRATION · COMMUNITY", tag: "Tokenization • Content", logo: IMG + "AB6AXuARLIg346ZK7UAgW_y3sI3fUS6nQ8sRGVAerw-jbz9fvHaM5XhXSGMcd8q6HbPNIsSGnUHLSRQfaD3BlxODwN-gDVaDTjj3TfXw14z90XOnRsTuCHvyxive7XpnERzQF_XA9yDRvQcoB2dGkQl6-dMXCFYQPXmWGjHoT2ODkNKrNLM5vZIg_kpFqfTN9AP6tL7snFyhjNuMwma1edkwOmj8wQljuTfFI0Wyd1L4b09QJJImKYun7vSn3VolRCZrWjyiBg" },
-    { n: "04", y: "2025", name: "Rift Studios", status: "Previous Engagement", label: "Culture & Community", desc: "NFT COMMUNITY · ENGAGEMENT · MEMBER EXPERIENCE", tag: "NFT • Community", logo: IMG + "AB6AXuCjhWXK3arBedZS_nh0rU1na5i1d80H0-F8slRvYX36cHbYX-SjL0IwnB1Y3-ab2hImdXm8nDs0QGRUlC2V2wU6BY4DJdWQIQbmLaEWXwt3hSzVL432i5309f2Glfc37ON57fM_mlqLSK_vPH2se1f_hPya84whnT2Vf5JylRmpG-akoxaZamlGiAoDria3pSkZjglPI1n_tXy3NFjQaL_w6Y0b2bHHHtcubuqWclb7Bt5p-1LH2NmMP3qxu_JMvZdhNw" },
+    { n: "03", y: "2025", name: "ReitCircles", status: "Ended December 2025", label: "Visual Communication", desc: "MANAGED THEIR DISCORD COMMUNITY · INFOGRAPHICS · ILLUSTRATION", tag: "Tokenization • Content", logo: IMG + "AB6AXuARLIg346ZK7UAgW_y3sI3fUS6nQ8sRGVAerw-jbz9fvHaM5XhXSGMcd8q6HbPNIsSGnUHLSRQfaD3BlxODwN-gDVaDTjj3TfXw14z90XOnRsTuCHvyxive7XpnERzQF_XA9yDRvQcoB2dGkQl6-dMXCFYQPXmWGjHoT2ODkNKrNLM5vZIg_kpFqfTN9AP6tL7snFyhjNuMwma1edkwOmj8wQljuTfFI0Wyd1L4b09QJJImKYun7vSn3VolRCZrWjyiBg" },
+    { n: "04", y: "2025", name: "Rift Studios", status: "Previous Engagement", label: "Culture & Community", desc: "CREATED & MANAGED THEIR DISCORD COMMUNITY · MEMBER EXPERIENCE", tag: "NFT • Community", logo: IMG + "AB6AXuCjhWXK3arBedZS_nh0rU1na5i1d80H0-F8slRvYX36cHbYX-SjL0IwnB1Y3-ab2hImdXm8nDs0QGRUlC2V2wU6BY4DJdWQIQbmLaEWXwt3hSzVL432i5309f2Glfc37ON57fM_mlqLSK_vPH2se1f_hPya84whnT2Vf5JylRmpG-akoxaZamlGiAoDria3pSkZjglPI1n_tXy3NFjQaL_w6Y0b2bHHHtcubuqWclb7Bt5p-1LH2NmMP3qxu_JMvZdhNw" },
   ] },
 ];
 
@@ -52,14 +52,6 @@ const navLinks = [
   { id: "contact", label: "Contact" },
 ];
 
-function YearBar({ year }: { year: string }) {
-  return (
-    <div className="mb-8 flex items-center justify-between bg-surface-high px-4 py-2">
-      <span className="caps text-primary">Temporal Frame</span>
-      <span className="meta font-semibold text-primary">{year}</span>
-    </div>
-  );
-}
 
 function Index() {
   const activeSection = usePortfolioMotion();
@@ -127,9 +119,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="pt-8">
-            <YearBar year="2026" />
-            <article className="reveal mb-16 bg-surface-lowest p-6 md:p-16">
+          <article className="reveal mb-16 bg-surface-lowest p-6 md:p-16">
               <div className="grid gap-8 lg:grid-cols-12">
                 <div className="flex min-w-0 flex-col justify-between lg:col-span-6">
                   <div>
@@ -184,11 +174,10 @@ function Index() {
                 </div>
               </div>
             </article>
-          </div>
 
-          {rows.map((g, gi) => (
-            <div key={g.year} className={gi === 0 ? "-mt-8" : "pt-16"}>
-              {gi > 0 && <YearBar year={g.year} />}
+
+          {rows.map((g) => (
+            <div key={g.year} className={g.year === "2025" ? "pt-3" : undefined}>
               {g.items.map((p, pi) => (
                 <article key={p.n} className="reveal mb-2 bg-surface-lowest p-6 md:p-8" style={{ transitionDelay: `${pi * 90}ms` }}>
                   <div className="grid items-center gap-6 md:grid-cols-12 md:gap-8">
