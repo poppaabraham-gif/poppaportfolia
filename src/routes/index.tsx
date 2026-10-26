@@ -178,9 +178,8 @@ function Index() {
             </article>
           </div>
 
-          {rows.map((g, gi) => (
-            <div key={g.year} className={gi === 0 ? "-mt-8" : "pt-16"}>
-              {gi > 0 && <YearBar year={g.year} />}
+          {rows.map((g) => (
+            <div key={g.year} className={g.items[0].n === "03" ? "pt-3" : undefined}>
               {g.items.map((p, pi) => (
                 <article key={p.n} className="reveal mb-2 bg-surface-lowest p-6 md:p-8" style={{ transitionDelay: `${pi * 90}ms` }}>
                   <div className="grid items-center gap-6 md:grid-cols-12 md:gap-8">
