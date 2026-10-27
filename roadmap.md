@@ -9,4 +9,4 @@
 - [x] Hero: add "Let's Talk" button; keep name, role, and tagline unchanged.
 - [x] Selected Work: new intro line; Level Break Media described as b-roll/voiceover/kinetic typography; remove "Attention Engineering" and repeated decorative labels.
 - [x] About: new paragraph and three approach lines; Contact label updated; "Availability • Open" removed.
-- [ ] Playwright verification: desktop scroll driver, mobile stacked sequence, reduced-motion fallback, no overflow.
+- [x] Playwright verification: desktop scroll driver, mobile stacked sequence, reduced-motion fallback, no overflow.
