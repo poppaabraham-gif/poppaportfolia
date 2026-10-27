@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import oldLogoAsset from "@/assets/oldc.png.asset.json";
 import { usePortfolioMotion } from "@/hooks/use-portfolio-motion";
+import { ScrollPairs } from "@/components/scroll-pairs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,7 +33,7 @@ const achievements = [
 ];
 
 const rows = [
-  { year: "2026", items: [{ n: "02", y: "2026", name: "Level Break Media", status: "Previous Engagement", label: "Attention Engineering", desc: "B-ROLL · VOICEOVER · KINETIC TYPOGRAPHY", tag: "Audiovisual • Motion", logo: IMG + "AB6AXuALeeoiZ3621scIYz5c51DiaFZ7WMyKP1J45cke5z76SWP1Tqm9Yq0wGtU9Xm7NzxJZfQPTtWSSbvIzIeEdiCtJqqcr2NDQ5bAunH1nnkKiHhVarVaIve0aL2feqXpDuYItRAx9jr8QMW-MduoA5iac8ErYSl8lVtRyqIZCWV623AFl3cZmHtH5Rn1EAl-ywzOW1l6NEHualGEy5Arj5RWowcYrlaJgksT2WoRvZI-sOMIt8AQWf2OlufD9lC9UwYKsFw" }] },
+  { year: "2026", items: [{ n: "02", y: "2026", name: "Level Break Media", status: "Previous Engagement", label: "Video Production", desc: "Created b-roll, voiceover, and kinetic typography.", logo: IMG + "AB6AXuALeeoiZ3621scIYz5c51DiaFZ7WMyKP1J45cke5z76SWP1Tqm9Yq0wGtU9Xm7NzxJZfQPTtWSSbvIzIeEdiCtJqqcr2NDQ5bAunH1nnkKiHhVarVaIve0aL2feqXpDuYItRAx9jr8QMW-MduoA5iac8ErYSl8lVtRyqIZCWV623AFl3cZmHtH5Rn1EAl-ywzOW1l6NEHualGEy5Arj5RWowcYrlaJgksT2WoRvZI-sOMIt8AQWf2OlufD9lC9UwYKsFw" }] },
   { year: "2025", items: [
     { n: "03", y: "2025", name: "ReitCircles", status: "Ended December 2025", label: "Visual Communication", desc: "MANAGED THEIR DISCORD COMMUNITY · INFOGRAPHICS · ILLUSTRATION", tag: "Tokenization • Content", logo: IMG + "AB6AXuARLIg346ZK7UAgW_y3sI3fUS6nQ8sRGVAerw-jbz9fvHaM5XhXSGMcd8q6HbPNIsSGnUHLSRQfaD3BlxODwN-gDVaDTjj3TfXw14z90XOnRsTuCHvyxive7XpnERzQF_XA9yDRvQcoB2dGkQl6-dMXCFYQPXmWGjHoT2ODkNKrNLM5vZIg_kpFqfTN9AP6tL7snFyhjNuMwma1edkwOmj8wQljuTfFI0Wyd1L4b09QJJImKYun7vSn3VolRCZrWjyiBg" },
     { n: "04", y: "2025", name: "Rift Studios", status: "Previous Engagement", label: "Culture & Community", desc: "CREATED & MANAGED THEIR DISCORD COMMUNITY · MEMBER EXPERIENCE", tag: "NFT • Community", logo: IMG + "AB6AXuCjhWXK3arBedZS_nh0rU1na5i1d80H0-F8slRvYX36cHbYX-SjL0IwnB1Y3-ab2hImdXm8nDs0QGRUlC2V2wU6BY4DJdWQIQbmLaEWXwt3hSzVL432i5309f2Glfc37ON57fM_mlqLSK_vPH2se1f_hPya84whnT2Vf5JylRmpG-akoxaZamlGiAoDria3pSkZjglPI1n_tXy3NFjQaL_w6Y0b2bHHHtcubuqWclb7Bt5p-1LH2NmMP3qxu_JMvZdhNw" },
@@ -40,10 +41,16 @@ const rows = [
 ];
 
 const domains = [
-  ["I make the unfamiliar feel undeniable.", "I turn complex ideas into stories people can understand, connect with, and believe in."],
-  ["Every brand has a pulse.", "Building sustained member retention, hosting live audio rooms, and designing shared cultural rituals."],
-  ["Attention is easy. Belonging is different.", "I build communities where people have a reason to show up, take part, and feel connected to what you're building."],
-  ["Make people feel something. Give them something to say.", "I create content and conversations that give people a reason to notice your brand and keep talking about it."],
+  "I make complex things easier to get.",
+  "I know how online culture moves.",
+  "I bring people into the conversation.",
+];
+
+const offer = [
+  ["01", "People don’t get what you do", "I make complex ideas easier to understand, so people can see why your product is better than its competition."],
+  ["02", "Your content blends in", "I find a sharper way to tell your story and help the right people notice it."],
+  ["03", "You’re struggling to connect with younger audiences", "I follow online culture and spot trends early. I help your brand join the conversation without sounding like it’s trying too hard."],
+  ["04", "People show up, then go quiet", "I help build community and give people reasons to take part. Discord setup and management can be part of that work when it fits."],
 ];
 
 const navLinks = [
@@ -96,6 +103,11 @@ function Index() {
               <p className="rise mt-6 max-w-xl text-xl leading-8 md:mt-16" style={{ animationDelay: "0.6s" }}>
                 “I work where ideas, people, and the internet meet.”
               </p>
+              <div className="rise mt-10" style={{ animationDelay: "0.8s" }}>
+                <a href="#contact" className="caps inline-flex items-center gap-3 border border-primary px-7 py-4 tracking-widest text-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground">
+                  Let’s Talk <span aria-hidden="true">↓</span>
+                </a>
+              </div>
             </div>
           </div>
           <div className="flex flex-col justify-between gap-4 pt-16 md:flex-row md:items-end">
@@ -108,6 +120,51 @@ function Index() {
           </div>
         </section>
 
+        <section id="intro" className="px-5 py-20 md:px-16 md:py-36">
+          <div className="reveal max-w-4xl">
+            <h2 className="font-display text-[clamp(1.75rem,5.5vw,2.75rem)] font-bold uppercase leading-[1.1] tracking-tight text-primary">
+              Good Product.
+              <br />
+              Hard to Explain?
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 md:mt-10 md:text-xl">
+              I bring a fresh point of view to brands that are tired of sounding like everyone else. I help make the story clearer, the content more human, and the connection with your audience feel natural.
+            </p>
+          </div>
+        </section>
+
+        <section id="approach" className="px-5 py-16 md:px-16 md:py-28">
+          <div className="reveal mx-auto max-w-5xl">
+            <h2 className="mb-10 font-display text-[clamp(1.75rem,6vw,3rem)] font-bold uppercase tracking-tight text-primary md:mb-14">
+              The Part That’s Not Clicking?
+            </h2>
+            <ScrollPairs />
+          </div>
+        </section>
+
+        <section id="offer" className="px-5 py-16 md:px-16 md:py-28">
+          <div className="max-w-6xl">
+            <h2 className="reveal mb-10 font-display text-[clamp(2rem,6.5vw,3.5rem)] font-bold uppercase leading-[1.06] tracking-tight text-primary md:mb-16">
+              What I Can Do for You
+            </h2>
+            <div>
+              {offer.map(([n, h, d], i) => (
+                <div
+                  key={n}
+                  className={`reveal grid gap-3 border-t border-surface-high py-8 md:grid-cols-12 md:gap-8 md:py-10 ${i === offer.length - 1 ? "border-b" : ""}`}
+                  style={{ transitionDelay: `${i * 70}ms` }}
+                >
+                  <span className="meta font-semibold text-primary md:col-span-2">{n} /</span>
+                  <h3 className="min-w-0 font-display text-[clamp(1.2rem,3.5vw,1.75rem)] font-bold uppercase leading-tight tracking-tight text-primary md:col-span-5">
+                    {h}
+                  </h3>
+                  <p className="min-w-0 text-sm leading-relaxed text-ink-dim md:col-span-5">{d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="work" className="px-5 py-16 md:px-16 md:py-28">
           <div className="reveal mb-12 grid gap-8 md:mb-16 md:grid-cols-12">
             <div className="min-w-0 md:col-span-8">
@@ -115,7 +172,7 @@ function Index() {
               <h2 className="font-display text-[clamp(2.25rem,7.5vw,4rem)] font-bold leading-[1.06] tracking-tight text-primary">Selected Work</h2>
             </div>
             <p className="flex items-end italic leading-relaxed text-ink-dim md:col-span-4">
-              “A small collection of things I've worked on across content, communities, and creative growth.”
+              “A few projects where I helped brands get noticed, explain what they were building, and bring people together.”
             </p>
           </div>
 
@@ -126,13 +183,6 @@ function Index() {
                     <div className="meta mb-1 tracking-widest text-ink-dim">Project 01 • October 2026 • Previous Engagement</div>
                     <h3 className="font-display text-[clamp(1.75rem,5vw,2.25rem)] font-bold uppercase tracking-tight text-primary">Coral Bricks</h3>
                     <span className="caps mb-8 block tracking-widest text-ink-dim">Growth, Content &amp; Creative</span>
-                    <div className="mb-8 bg-surface-low p-4">
-                      <div className="meta mb-2 flex justify-between border-b border-surface-high pb-2 text-ink-dim">
-                        <span>Coral Bricks • 2026</span><span aria-hidden="true">▦</span>
-                      </div>
-                      <div className="text-[22px] font-semibold uppercase leading-tight text-primary">Beyond the Model</div>
-                      <p className="meta mt-1 text-ink-dim">Brand, Content &amp; Audience</p>
-                    </div>
                     <div className="mb-8 bg-surface-low p-4">
                       <div className="caps mb-1 text-primary">Logo Redesign</div>
                       <p className="mb-4 text-sm text-ink-dim">A refreshed identity for Coral Bricks.</p>
@@ -194,7 +244,7 @@ function Index() {
                       <p>{p.desc}</p>
                     </div>
                     <div className="flex min-w-0 md:col-span-3 md:justify-end">
-                      <span className="meta bg-surface-mid px-3 py-1 text-primary">{p.tag}</span>
+                      {p.tag ? <span className="meta bg-surface-mid px-3 py-1 text-primary">{p.tag}</span> : null}
                     </div>
                   </div>
                 </article>
@@ -215,15 +265,14 @@ function Index() {
                 </div>
               </div>
               <div className="reveal min-w-0 lg:col-span-7">
-                <p className="mb-4 leading-relaxed">
-                  I'm Poppa Abraham. I like taking ideas and turning them into things people can actually see, use, or connect with. From building online communities to creating content and working on AI products, I've found myself doing a bit of everything on the internet, and honestly, I enjoy it.
+                <p className="mb-4 max-w-2xl leading-relaxed">
+                  I’m Poppa Abraham, a community and content professional based in Lagos. I work across campaigns, content, and online communities—helping brands explain what they’re building and connect with the people they want to reach.
                 </p>
-                <div className="grid gap-4 pt-4 sm:grid-cols-2">
-                  {domains.map(([t, d], i) => (
-                    <div key={t} className="reveal min-w-0 bg-surface-lowest p-4" style={{ transitionDelay: `${i * 70}ms` }}>
-                      <span className="meta mb-1 block text-ink-dim">Domain 0{i + 1}</span>
-                      <span className="text-[22px] font-semibold uppercase leading-7 text-primary">{t}</span>
-                      <p className="mt-2 text-sm text-ink-dim">{d}</p>
+                <div className="grid gap-4 pt-4 sm:grid-cols-3">
+                  {domains.map((line, i) => (
+                    <div key={line} className="reveal min-w-0 bg-surface-lowest p-4" style={{ transitionDelay: `${i * 70}ms` }}>
+                      <span className="meta mb-2 block text-ink-dim">Domain 0{i + 1}</span>
+                      <span className="text-lg font-semibold uppercase leading-6 text-primary md:text-[20px] md:leading-7">{line}</span>
                     </div>
                   ))}
                 </div>
@@ -234,8 +283,8 @@ function Index() {
 
         <section id="contact" className="bg-primary px-5 py-16 text-primary-foreground md:px-16 md:py-28">
           <div className="flex min-h-[50vh] max-w-6xl flex-col justify-between">
-            <div className="meta reveal flex flex-col gap-2 pb-16 tracking-widest text-inverse-muted sm:flex-row sm:justify-between">
-              <span>Dialogue / 03 — Direct Channel</span><span>Availability • Open</span>
+            <div className="meta reveal pb-16 tracking-widest text-inverse-muted">
+              <span>Contact / Open to the Right Project</span>
             </div>
             <div className="reveal py-8">
               <h2 className="max-w-4xl font-display text-[clamp(2rem,7.5vw,4rem)] font-extrabold uppercase leading-[1.05] tracking-tight">Got Something in Mind?</h2>
