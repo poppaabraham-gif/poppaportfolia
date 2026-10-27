@@ -32,7 +32,8 @@ const achievements = [
   ["04 / User Retention", "Built targeted user re-engagement campaigns using PostHog and emails."],
 ];
 
-const rows = [
+type ProjectRow = { n: string; y: string; name: string; status: string; label: string; desc: string; tag?: string; logo: string };
+const rows: { year: string; items: ProjectRow[] }[] = [
   { year: "2026", items: [{ n: "02", y: "2026", name: "Level Break Media", status: "Previous Engagement", label: "Video Production", desc: "Created b-roll, voiceover, and kinetic typography.", logo: IMG + "AB6AXuALeeoiZ3621scIYz5c51DiaFZ7WMyKP1J45cke5z76SWP1Tqm9Yq0wGtU9Xm7NzxJZfQPTtWSSbvIzIeEdiCtJqqcr2NDQ5bAunH1nnkKiHhVarVaIve0aL2feqXpDuYItRAx9jr8QMW-MduoA5iac8ErYSl8lVtRyqIZCWV623AFl3cZmHtH5Rn1EAl-ywzOW1l6NEHualGEy5Arj5RWowcYrlaJgksT2WoRvZI-sOMIt8AQWf2OlufD9lC9UwYKsFw" }] },
   { year: "2025", items: [
     { n: "03", y: "2025", name: "ReitCircles", status: "Ended December 2025", label: "Visual Communication", desc: "MANAGED THEIR DISCORD COMMUNITY · INFOGRAPHICS · ILLUSTRATION", tag: "Tokenization • Content", logo: IMG + "AB6AXuARLIg346ZK7UAgW_y3sI3fUS6nQ8sRGVAerw-jbz9fvHaM5XhXSGMcd8q6HbPNIsSGnUHLSRQfaD3BlxODwN-gDVaDTjj3TfXw14z90XOnRsTuCHvyxive7XpnERzQF_XA9yDRvQcoB2dGkQl6-dMXCFYQPXmWGjHoT2ODkNKrNLM5vZIg_kpFqfTN9AP6tL7snFyhjNuMwma1edkwOmj8wQljuTfFI0Wyd1L4b09QJJImKYun7vSn3VolRCZrWjyiBg" },
